@@ -52,6 +52,14 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/burleigh_sunset"
+                android:scaleType="centerCrop"
+                android:contentDescription="Sunset at Burleigh Hill" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
