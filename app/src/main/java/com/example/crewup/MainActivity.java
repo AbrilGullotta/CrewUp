@@ -7,6 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +23,23 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        Button btnJoin = findViewById(R.id.btnJoin);
+        LinearLayout messageContainer = findViewById(R.id.messageContainer);
+
+        btnJoin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                TextView message = new TextView(MainActivity.this);
+                message.setText("✓ Request sent to Emma");
+                message.setTextSize(16);
+
+                messageContainer.addView(message);
+
+                btnJoin.setEnabled(false);
+                btnJoin.setText("Request sent");
+            }
         });
     }
 }
